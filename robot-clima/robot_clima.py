@@ -8,6 +8,13 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 
+import sys
+import io
+
+# Forzar UTF-8 en stdout/stderr (necesario cuando se ejecuta desde n8n/cmd en Windows)
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="replace")
+
 # =========================================================
 # CONFIGURACIÓN
 # =========================================================
